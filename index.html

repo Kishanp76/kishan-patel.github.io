@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kishan Patel – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; background: #f8f8f8; color: #333; }
+    h1 { color: #222; }
+    a { color: #0077cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Kishan Patel</h1>
+  <p>Welcome to my portfolio site. I'm a student/professional interested in [engineering, software, design, etc.].</p>
+  <p>📫 Email me at <a href="mailto:kishan@kishan-patel.com">kishan@kishan-patel.com</a></p>
+  <p>🌐 More coming soon...</p>
+</body>
+</html>
