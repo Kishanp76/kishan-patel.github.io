@@ -1,66 +1,101 @@
-/* Base layout and colors */
+:root {
+  --bg-color: #F5F5F5;
+  --text-color: #212121;
+  --header-bg: #3F51B5;
+  --header-link: white;
+  --header-hover: #00BCD4;
+  --card-bg: #FFFFFF;
+  --footer-bg: #eeeeee;
+  --footer-text: #757575;
+  --border-color: #3F51B5;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --header-bg: #1f1f1f;
+  --header-link: #e0e0e0;
+  --header-hover: #4FC3F7;
+  --card-bg: #1e1e1e;
+  --footer-bg: #1a1a1a;
+  --footer-text: #999999;
+  --border-color: #4FC3F7;
+}
+
+/* Base layout */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #F5F5F5; /* light gray background */
-  color: #212121;       /* deep gray text */
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Header styles */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #3F51B5;  /* indigo */
+  background: var(--header-bg);
   color: white;
   padding: 1rem 2rem;
 }
 
-/* Navigation links */
+/* Toggle button */
+.toggle-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--header-link);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Nav */
 header nav a {
   margin-left: 1rem;
-  color: white;
+  color: var(--header-link);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #00BCD4; /* sky blue accent on hover */
+  color: var(--header-hover);
 }
 
-/* Main hero section */
+/* Hero */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: #FFFFFF;
+  background: var(--card-bg);
   border-radius: 8px;
   margin: 2rem auto;
   max-width: 800px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Profile picture styling */
+/* Profile picture */
 .profile-pic {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 4px solid #3F51B5;
+  border: 4px solid var(--border-color);
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #757575; /* muted gray */
-  background: #eeeeee;
+  color: var(--footer-text);
+  background: var(--footer-bg);
 }
 
-/* Icon images (e.g. GitHub/LinkedIn) */
+/* Icons */
 .icon {
   width: 20px;
   height: 20px;
