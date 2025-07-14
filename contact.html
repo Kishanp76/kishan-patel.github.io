@@ -2,49 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Contact – Kishan Patel</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <div class="logo">Kishan Patel</div>
-    <nav>
-  <a href="index.html">🏠 Home</a>
-  <a href="projects.html">🛠️ Projects</a>
-  <a href="resume.html">📄 Resume</a>
-
-  <!-- Contact link (uses email.svg) -->
-  <a href="contact.html" title="Contact">
-    <img src="assets/email.svg" alt="Contact" class="icon"/>Contact
-  </a>
-
-  <!-- GitHub link (uses github.svg) -->
-  <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
-    <img src="assets/github.svg" alt="GitHub" class="icon"/>GitHub
-  </a>
-
-  <!-- LinkedIn link (uses linkedin.svg) -->
-  <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
-    <img src="assets/linkedin.svg" alt="LinkedIn" class="icon"/>LinkedIn
-  </a>
-
-  <!-- Theme toggle -->
-  <button id="themeToggle" title="Toggle Theme">🌙</button>
-</nav>
-
-
+    <nav class="container">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html" title="Contact">
+          <img src="assets/email.svg" class="icon" alt="Contact"/>
+        </a>
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
+          <img src="assets/github.svg" class="icon" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.svg" class="icon" alt="LinkedIn"/>
+        </a>
+        <button id="themeToggle" title="Toggle Theme">🌙</button>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Contact</h1>
-      <p>📫 You can reach me at <a href="mailto:kishan@kishan-patel.com">kishan@kishan-patel.com</a></p>
-    </section>
+  <main class="container section">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <label>
+        Name
+        <input type="text" placeholder="Your name"/>
+      </label>
+      <label>
+        Email
+        <input type="email" placeholder="you@example.com"/>
+      </label>
+      <label>
+        Message
+        <textarea rows="5" placeholder="Your message…"></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
   </main>
 
   <footer>
-    <p>© 2025 Kishan Patel</p>
+    <div class="container">&copy; 2025 Kishan Patel</div>
   </footer>
 
   <script src="script.js"></script>
