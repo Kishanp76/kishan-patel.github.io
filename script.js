@@ -1,16 +1,17 @@
 // script.js
 const toggleBtn = document.getElementById('themeToggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const current = localStorage.getItem('theme');
+const saved = localStorage.getItem('theme');
 
-if (current === 'dark' || (!current && prefersDark)) {
+// On load: apply saved or system preference
+if (saved === 'dark' || (!saved && prefersDark)) {
   document.body.classList.add('dark-mode');
   toggleBtn.textContent = '☀️';
 }
 
+// Toggle handler
 toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
+  const isDark = document.body.classList.toggle('dark-mode');
   toggleBtn.textContent = isDark ? '☀️' : '🌙';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
