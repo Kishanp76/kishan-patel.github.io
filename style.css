@@ -1,4 +1,39 @@
+/*─────────────────────────────────────
+  1. COLOR & THEME VARIABLES
+─────────────────────────────────────*/
+:root {
+  --bg: #FAFAFA;
+  --text: #333333;
+  --primary: #0A1E3F;
+  --accent: #FF6F61;
+  --accent2: #00BCD4;
+  --muted: #A0A0A0;
+  --white: #FFFFFF;
+  --font: 'Inter', sans-serif;
+}
 
+.dark-mode {
+  --bg: #121212;
+  --text: #EEEEEE;
+  --primary: #E0E0E0;
+  --accent: #BB86FC;
+  --accent2: #4FC3F7;
+  --muted: #555555;
+  --white: #222222;
+}
+
+/*─────────────────────────────────────
+  2. RESET & BOX-SIZING
+─────────────────────────────────────*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*─────────────────────────────────────
+  3. GLOBAL LAYOUT
+─────────────────────────────────────*/
 html, body {
   height: 100%;
 }
@@ -6,58 +41,39 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* Make <main> grow to fill between header & footer */
-main.container {
-  flex: 1;
-}
-
-/* Ensure footer sits at bottom */
-footer {
-  margin-top: auto;
-}
-
-
-:root {
-  --bg: #FAFAFA;
-  --text: #333;
-  --primary: #0A1E3F;
-  --accent: #FF6F61;
-  --accent2: #00BCD4;
-  --muted: #A0A0A0;
-  --white: #FFF;
-  --font: 'Inter', sans-serif;
-}
-.dark-mode {
-  --bg: #121212;
-  --text: #EEE;
-  --primary: #E0E0E0;
-  --accent: #BB86FC;
-  --accent2: #4FC3F7;
-  --muted: #555;
-  --white: #222;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   transition: background .3s, color .3s;
 }
+main.container {
+  flex: 1;
+  padding-top: 4rem; /* space below sticky header */
+}
 .container {
-  max-width: 840px;
+  max-width: 1000px;
   margin: auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
+}
+footer {
+  margin-top: auto;
+  background: var(--white);
+  border-top: 1px solid var(--muted);
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: .9rem;
 }
 
-/* ─── HEADER & NAV ─── */
+/*─────────────────────────────────────
+  4. HEADER & NAVIGATION
+─────────────────────────────────────*/
 header {
   background: var(--white);
   border-bottom: 1px solid var(--muted);
-  position: sticky; top: 0; z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 nav.container {
   display: flex;
@@ -65,9 +81,7 @@ nav.container {
   align-items: center;
   padding: 1rem 0;
 }
-nav .nav-left a,
-nav .nav-right a,
-nav .nav-right button {
+nav a, nav button {
   font-weight: 500;
   text-decoration: none;
   color: var(--text);
@@ -79,25 +93,27 @@ nav .nav-right button {
   padding-bottom: 2px;
   transition: color .2s;
 }
-nav .nav-left a::after,
-nav .nav-right a::after {
+nav a::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px; background: var(--accent2);
-  transform: scaleX(0); transform-origin: left;
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--accent2);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform .2s;
 }
-nav .nav-left a:hover::after,
-nav .nav-right a:hover::after {
+nav a:hover::after {
   transform: scaleX(1);
 }
-nav .nav-right button:hover,
-nav .nav-left a:hover,
-nav .nav-right a:hover {
+nav a:hover,
+nav button:hover {
   color: var(--accent);
 }
-
-/* ICONS */
+.toggle-btn {
+  font-size: 1.2rem;
+}
 .icon {
   width: 24px;
   height: 24px;
@@ -105,110 +121,210 @@ nav .nav-right a:hover {
   filter: var(--icon-filter, none);
 }
 
-/* ─── HERO ─── */
-.hero {
-  margin: 3rem 0;
-  text-align: center;
+/*─────────────────────────────────────
+  5. HERO (TWO-COLUMN) SECTION
+─────────────────────────────────────*/
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0 4rem; /* top halved */
 }
-.hero h1 {
-  font-size: 2.5rem;
+.hero-image {
+  flex: 0 0 300px;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.hero-image img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
   color: var(--primary);
-  margin-bottom: .5rem;
+  margin-bottom: .25rem;
 }
-.subtitle {
+.hero-text .subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
   color: var(--accent2);
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-.blurb {
-  max-width: 700px;       
-  margin: 0.75rem auto;  
-  font-size: 1.1rem;      
-  line-height: 1.6;       
-  color: var(--muted);
+.hero-text .intro {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--text);
 }
 
-
-/* ─── SECTIONS ─── */
+/*─────────────────────────────────────
+  6. SECTION & PLACEHOLDER STYLES
+─────────────────────────────────────*/
 .section {
-  margin-bottom: 3rem;
+  padding: 4rem 0;
 }
+/* Left-border only, no bottom bar */
 .section h2 {
   font-size: 1.8rem;
   color: var(--primary);
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
   padding-left: .5rem;
+  border-left: 4px solid var(--accent);
 }
-.placeholder {
+/* EXPERIENCE CARD */
+.experience-card {
   background: #E8E8E8;
-  color: var(--muted);
-  height: 120px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-top: 1rem;
 }
 
-/* project grid*/
+/*─────────────────────────────────────
+  7. WORKED PROGRAMS GRID + HOVER BAR
+─────────────────────────────────────*/
 .projects-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
 }
-
-
 .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
   background: var(--white);
-  border: 1px solid #DDD;
-  border-radius: 6px;
-  padding: 1rem;
-  transition: box-shadow .2s;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
 }
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+/* reveal-top vertical accent on hover */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 4px; height: 0;
+  background: var(--accent);
+  transition: height .3s ease;
+}
+.card:hover::before {
+  height: 100%;
+}
+/* image fills card, uniform size */
+.project-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+/* title block below image */
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding: .75rem;
+  text-align: center;
+  background: var(--white);
 }
 
-/* ─── CONTACT FORM ─── */
-.contact-form {
-  display: grid;
-  gap: 1rem;
+/*─────────────────────────────────────
+  8. CONTACT FORM CARD
+─────────────────────────────────────*/
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
 }
 .contact-form label {
-  font-weight: 500;
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  color: var(--primary);
 }
 .contact-form input,
 .contact-form textarea {
-  border: 1px solid #CCC;
-  border-radius: 4px;
-  padding: .6rem;
-  background: var(--white);
-  color: var(--text);
+  width: 100%;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent2);
+  box-shadow: 0 0 0 3px rgba(0,188,212,0.2);
+  outline: none;
 }
 .contact-form button {
-  padding: .8rem 1.5rem;
-  background: var(--accent);
+  width: 100%;
+  padding: .9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--white);
+  background: var(--accent2);
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background .2s;
 }
 .contact-form button:hover {
-  background: #e65b50;
-}
-/* ─── FOOTER ─── */
-footer {
-  background: var(--white);
-  border-top: 1px solid var(--muted);
-  text-align: center;
-  padding: 2rem 0;
-  color: var(--muted);
-  font-size: .9rem;
+  background: var(--accent);
 }
 
-/* Dark-mode icon inversion */
-.dark-mode .icon {
-  filter: invert(100%) brightness(1.2);
+/*─────────────────────────────────────
+  9. RESUME PREVIEW CARD
+─────────────────────────────────────*/
+.resume-card {
+  max-width: 840px;
+  margin: 1rem auto;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.resume-preview {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.download-btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  background: var(--accent2);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.download-btn:hover {
+  background: var(--accent);
+}
+
+/*─────────────────────────────────────
+  10. DARK-MODE FIX FOR RESUME PREVIEW
+─────────────────────────────────────*/
+.dark-mode .resume-card {
+  background: #ffffff !important;
+  border: 1px solid var(--muted) !important;
 }

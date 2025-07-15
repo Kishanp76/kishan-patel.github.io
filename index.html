@@ -4,11 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Kishan Patel</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
+  <!-- HEADER / NAV -->
   <header>
     <nav class="container">
       <div class="nav-left">
@@ -20,49 +26,78 @@
         <a href="contact.html" title="Contact">
           <img src="assets/email.svg" class="icon" alt="Contact"/>
         </a>
-        <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
+        <a href="https://github.com/Kishanp76" target="_blank" title="GitHub">
           <img src="assets/github.svg" class="icon" alt="GitHub"/>
         </a>
-        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/kishan-patel-2b9a08253/" target="_blank" title="LinkedIn">
           <img src="assets/linkedin.svg" class="icon" alt="LinkedIn"/>
         </a>
-        <button id="themeToggle" title="Toggle Theme">🌙</button>
+        <button id="themeToggle" class="toggle-btn" title="Toggle Theme">🌙</button>
       </div>
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
-    <section class="section hero">
-  <h1>Kishan Patel</h1>
-  <p class="subtitle">Aerospace Engineer</p>
-  <p class="blurb">
-    Building solar cars, exploring composite materials, and helping to design the next generation of American defense systems.
-  </p>
-  <p class="blurb">
-    Welcome to my portfolio.
-  </p>
+
+    <!-- HERO SECTION -->
+<section class="hero-section container">
+  <div class="hero-image">
+    <img src="assets/your-photo.jpg" alt="Kishan Patel"/>
+  </div>
+  <div class="hero-text">
+    <h1>Kishan Patel</h1>
+    <h2 class="subtitle">Aerospace Engineer</h2>
+    <p class="intro">
+
+       I am a senior in aerospace engineering at Iowa State University.
+       You can find me building solar cars, exploring composite materials, and helping to design
+      the next generation of American defense systems.
+      Welcome to my portfolio site.
+    </p>
+  </div>
 </section>
 
 
+<!-- WORKED PROGRAMS SECTION -->
+    <section class="section">
+      <h2>Worked Programs</h2>
+      <div class="projects-grid">
+        <a href="https://www.northropgrumman.com/what-we-do/mission-solutions/electro-optical-and-infrared-sensors-eo-ir/litening-advanced-targeting-pod"
+           class="card" target="_blank">
+          <div class="card-title">Litening Targeting Pod</div>
+          <img src="assets/litening.jpg" alt="Litening pod" class="project-img"/>
+        </a>
+        <a href="https://www.northropgrumman.com/what-we-do/mission-solutions/electronic-warfare/f-16-integrated-viper-electronic-warfare-suite-ivews"
+           class="card" target="_blank">
+          <div class="card-title">RF-Countermeasures</div>
+          <img src="assets/rf-countermeasures.jpg" alt="AN/APR-39" class="project-img"/>
+        </a>
+        <a href="https://www.northropgrumman.com/what-we-do/mission-solutions/electro-optical-and-infrared-sensors-eo-ir/an-aaq-24v-dircm-directional-infrared-countermeasure"
+           class="card" target="_blank">
+          <div class="card-title">IR-Countermeasures</div>
+          <img src="assets/ir-countermeasures.jpg" alt="Guardian IRCM" class="project-img"/>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE SECTION -->
     <section class="section">
       <h2>Experience</h2>
       <div class="placeholder">[Bullet your top roles here]</div>
     </section>
 
-    <section class="section">
-      <h2>Worked Programs</h2>
-      <div class="projects-grid">
-        <div class="card placeholder">Litening</div>
-        <div class="card placeholder">AN/APR-39</div>
-        <div class="card placeholder">Guardian IRCM</div>
-      </div>
-    </section>
+    
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">&copy; 2025 Kishan Patel</div>
   </footer>
 
+  <!-- THEME TOGGLE SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>

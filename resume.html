@@ -4,35 +4,74 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Resume – Kishan Patel</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">Kishan Patel</div>
-      <div class="links">
+  <!-- HEADER / NAV (identical to index.html) -->
+  <header>
+    <nav class="container">
+      <div class="nav-left">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html" title="Contact">
+          <img src="assets/email.svg" class="icon" alt="Contact"/>
+        </a>
+        <a href="https://github.com/Kishanp76" target="_blank" title="GitHub">
+          <img src="assets/github.svg" class="icon" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/kishan-patel-2b9a08253/" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.svg" class="icon" alt="LinkedIn"/>
+        </a>
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="toggle-btn" title="Toggle Theme">🌙</button>
       </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container section">
-  <h2>Resume</h2>
-  <iframe src="assets/resume.pdf" style="width:100%;height:600px;border:none;border-radius:4px;"></iframe>
-</main>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="section resume-section">
+      <h2>Resume</h2>
 
+      <!-- Static Resume Preview -->
+      <div class="resume-card">
+        <img
+          src="assets/resume-preview.png"
+          alt="Resume preview"
+          class="resume-preview"
+        />
+      </div>
 
-<footer>
-  <div class="container">
-    &copy; 2025 Kishan Patel
-  </div>
-</footer>
+      <!-- Download Button -->
+      <div style="text-align:center; margin-top:1rem;">
+        <a href="assets/resume-website.pdf" download class="download-btn">
+          📄 Download Full Resume (PDF)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">&copy; 2025 Kishan Patel</div>
+  </footer>
+
+  <!-- Theme toggle script (same as index.html) -->
+  <script src="script.js"></script>
 </body>
 </html>
