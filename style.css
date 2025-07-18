@@ -90,7 +90,7 @@ nav a, nav button {
   border: none;
   cursor: pointer;
   position: relative;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
   transition: color .2s;
 }
 nav a::after {
@@ -325,6 +325,7 @@ nav button:hover {
   10. DARK-MODE FIX FOR RESUME PREVIEW
 ─────────────────────────────────────*/
 .dark-mode .resume-card {
-  background: #ffffff !important;
+  background: #8a8585 !important;
   border: 1px solid var(--muted) !important;
+  
 }
